@@ -1,2 +1,3 @@
-# desenvolvimento-web-ii
-Disciplina de desenvolvimento WEB II
+# Fundatec Disciplina de Desenvolvimento Web II
+
+Código e trabalhos gerados durante a disciplina
