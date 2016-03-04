@@ -1,0 +1,21 @@
+.vermelho {
+    color: red;
+}
+
+h1.vermelho {
+    font-style: italic;
+}
+
+.negrito {
+    font-weight: bold;
+}
+
+p {
+    font-family: cursive;
+}
+
+#quartoParagrafo { 
+    font-family: monospace;
+    color: greenyellow;
+    background-color: black;
+}
