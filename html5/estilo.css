@@ -1,0 +1,30 @@
+#div1 {
+    width: 200px;
+    height: 200px;
+    background-image: url(qipoa166.jpg);
+    border-radius: 100px;
+    background-size: 300px;
+    background-position: -50px;
+    box-shadow: 2px 2px #bababa;
+}
+
+body {
+    background-image: url(Logo_Umbro.png), url(natural-paper-texture.jpg);
+    background-position: right bottom, left top;
+    background-repeat: no-repeat, repeat;
+    background-size: 100px, auto;
+    
+}
+
+@media only screen and (max-width: 500px) {
+ #div1 {
+    width: 100px;
+    height: 100px;
+    background-image: url(qipoa166.jpg);
+    border-radius: 50px;
+    background-size: 150px;
+    background-position: -25px;
+    box-shadow: 2px 2px #bababa;
+}
+   
+}
