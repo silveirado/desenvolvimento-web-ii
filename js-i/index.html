@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Hello World!!!!</title>
+    </head>
+  <body>
+    <script>
+        var nome = prompt('Diga seu nome');
+        
+        var idade = prompt('Seu ano de nascimento?');
+        
+        if (confirm('Tem certeza que seu nome é ' + nome + '?')){
+            alert('Olá, ' + nome + '!!!');
+        }
+        
+        idade = 2016 - (idade * 1);
+        
+        alert('Você tem ' + idade + ((idade > 20) ? ' \n Cê tá velho hein :)': ''));
+    </script>
+  </body>
+</html>
