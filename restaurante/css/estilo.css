@@ -1,0 +1,50 @@
+.navbar-right .icon {
+  font-size: 28px;
+}
+
+header {
+  position: relative;
+  top: 130px;
+}
+
+.jumbotron {
+  background-color: #18bc9c;
+  min-height: 300px;
+}
+
+.carousel-inner .item img {
+  max-width: 600px;
+  height: 450px;
+  margin: 0 auto 20px;
+}
+
+.carousel-caption {
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 2px 2px #444;
+}
+
+.conteudo{
+  position: relative;
+  margin-top: 150px;
+}
+
+.rodape {
+  background-color: #2c3e50;
+}
+
+.delivery img {
+  height: 150px;
+}
+.delivery p {
+  font-size: 28px;
+}
+.delivery {
+  text-align: center;
+}
+
+.quem {
+  height: 180px;
+  text-align: center;
+  vertical-align: bottom;
+}
