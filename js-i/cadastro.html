@@ -15,6 +15,8 @@
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
+<script src="cadastro.js"></script>
+
 </head>
 
 <body>
@@ -27,17 +29,19 @@
         <div class="panel panel-primary">
           <div class="panel-heading">Cadastre-se em nosso site</div>
           <div class="panel-body">
-            <form action="cadastro.html">
-              <div class="form-group">
-                <label for="nome">Nome</label>
+            <div id="mensagens"></div>
+            <form action="cadastro.html" name="form">
+              <div class="form-group required">
+                <label for="nome" class="control-label">Nome</label>
                 <input type="text" class="form-control" id="nome" placeholder="Informe seu nome completo" name="nome">
+                <!-- -->
               </div>
-              <div class="form-group">
-                <label for="idade">Idade</label>
+              <div class="form-group required">
+                <label for="idade" class="control-label">Idade</label>
                 <input type="number" class="form-control" id="idade" placeholder="Nos conte quantos anos você tem" name="idade">
               </div>
               <div class="form-group">
-                <label for="escolaridade">Escolaridade</label>
+                <label class="control-label" for="escolaridade">Escolaridade</label>
                 <select class="form-control" id="escolaridade" name="escolaridade">
                   <option>Selecione...</option>
                   <option value="B">Básico</option>
@@ -49,7 +53,7 @@
               </div>
               
               
-              <button type="submit" class="btn btn-primary">Cadastrar</button>
+              <button type="button" class="btn btn-primary" id="enviar">Cadastrar</button>
               <button type="reset" class="btn btn-warning">Limpar</button>
             </form>
           </div>
