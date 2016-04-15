@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello JS</title>
+  <script>
+    function atualizaNome(){
+      var nomeInput = document.getElementById('nomeInput');
+      var nome = document.getElementById('nome');
+      nome.innerText = nomeInput.value;
+    }
+  </script>
+</head>
+<body>
+  <h1>Hello <span id="nome"></span>!!!</h1>
+  <input type="text" id="nomeInput" onkeyup="atualizaNome()">
+</body>
+</html>
