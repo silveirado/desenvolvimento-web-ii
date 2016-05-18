@@ -1,13 +1,14 @@
 angular
   .module('avaliacao')
-  .controller('LoginCtrl', ['$rootScope', '$scope', loginCtrl]);
+  .controller('LoginCtrl', ['$rootScope', '$scope', '$http', '$state', loginCtrl]);
 
 var MENSAGEM_INFORME_EMAIL = 'Informe seu email',
   MENSAGEM_EMAIL_INVALIDO = 'O email informado está inválido',
-  MENSAGEM_INFORME_SENHA = 'Informe sua senha';
+  MENSAGEM_INFORME_SENHA = 'Informe sua senha',
+  USUARIO_OU_SENHA_INVALIDA = 'Usuário ou senha inválidos';
 
 
-function loginCtrl($rootScope, $scope) {
+function loginCtrl($rootScope, $scope, $http, $state) {
 
   var espionar = _espionarSeEstaValido.bind(this, $scope),
     fechaMensagem = _closeValidMessage.bind(this, $scope)
@@ -23,7 +24,7 @@ function loginCtrl($rootScope, $scope) {
 
   //Bind cria uma nova função "cópia" da atual, passando o contexto
   // com o primeiro parametro e demais parametros fixos
-  $scope.login = _login.bind(this, $scope);
+  $scope.login = _login.bind(this, $rootScope, $scope, $http, $state);
 
   espionar('email', fechaMensagemEmail);
   espionar('email', fechaMensagemEmailInvalido);
@@ -50,7 +51,7 @@ function _closeAlert($scope, index) {
   $scope.alerts.splice(index, 1);
 }
 
-function _login($scope) {
+function _login($rootScope, $scope, $http, $state) {
   var form = $scope.formLogin,
     emailInput = $scope.formLogin.email,
     senhaInput = $scope.formLogin.senha,
@@ -61,7 +62,20 @@ function _login($scope) {
   $scope.alerts = [];
 
   if (form.$valid) {
-    //TODO: Validar usuario e senha
+    $http({
+      method: 'GET',
+      url: '/dados/usuarios.json'
+    }).then(function successCallback(response){
+      var usuario = response.data[0];
+      if (usuario.email === $scope.email && usuario.senha === $scope.senha){
+        $rootScope.usuarioLogado = usuario;
+        $state.go('home');
+      } else {
+        addError(USUARIO_OU_SENHA_INVALIDA);
+      }
+    }, function errorCallback(response){
+      console.log('ERRO', response);
+    });
 
   } else {
     var emailEmBranco = emailInput.$error.required,

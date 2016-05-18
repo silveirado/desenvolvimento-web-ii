@@ -1,0 +1,5 @@
+body { 
+    background-image: url('img/fundo3.jpg');
+    background-repeat: repeat;
+    background-attachment: fixed;
+}

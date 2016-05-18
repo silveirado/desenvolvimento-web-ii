@@ -1,6 +1,7 @@
 angular
   .module("avaliacao", ['ui.router', 'ui.bootstrap'])
-  .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', routes]);
+  .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', routes])
+  .run(['$rootScope', '$state', run]);
 
 
 function routes($stateProvider, $urlRouterProvider, $locationProvider) {
@@ -20,4 +21,13 @@ function routes($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/login',
       templateUrl: 'templates/login.html'
     });
+}
+
+function run($rootScope, $state){
+  $rootScope.logout = _logout.bind(this, $rootScope, $state);
+}
+
+function _logout($rootScope, $state){
+  $rootScope.usuarioLogado = undefined;
+  $state.go('home');
 }
