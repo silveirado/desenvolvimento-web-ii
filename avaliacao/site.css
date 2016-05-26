@@ -1,5 +1,10 @@
 body { 
-    background-image: url('img/fundo3.jpg');
-    background-repeat: repeat;
+    background-image: url('img/fundo_crayons.jpg');
+    background-repeat: no-repeat;
     background-attachment: fixed;
+    background-size: cover;
+}
+
+.panel-alunos {
+    min-height: 80vh;
 }

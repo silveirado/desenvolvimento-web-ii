@@ -20,7 +20,12 @@ function routes($stateProvider, $urlRouterProvider, $locationProvider) {
     .state('login', {
       url: '/login',
       templateUrl: 'templates/login.html'
-    });
+    })
+    .state('alunos', {
+      url: '/alunos',
+      templateUrl: 'templates/alunos.html',
+      controller: 'AlunosCtrl'
+  });
 }
 
 function run($rootScope, $state){
