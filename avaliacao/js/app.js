@@ -1,7 +1,9 @@
 angular
   .module("avaliacao", ['ui.router', 'ui.bootstrap'])
   .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', routes])
-  .run(['$rootScope', '$state', run]);
+  .run(['$rootScope', '$state', run])
+  //.constant('URL_API', 'https://project-2989461822637054304.firebaseio.com/');
+  .constant('URL_API', 'https://project-6331782263588372855.firebaseio.com/');
 
 
 function routes($stateProvider, $urlRouterProvider, $locationProvider) {
