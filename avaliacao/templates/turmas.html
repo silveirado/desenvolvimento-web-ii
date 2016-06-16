@@ -25,10 +25,10 @@
                         <input type="checkbox" name="excluir" ng-model="turma.excluir">
                     </td>
                     <td>{{turma.nome}}</td>
-                    <td>{{turma.professor.nome}}</td>
-                    <td>{{turma.alunos}}</td>
+                    <td>{{turma.professorNome}}</td>
+                    <td>{{(turma.alunos || []).length | number:0}}</td>
                     <td>
-                        <button type="button" class="btn btn-primary" ng-click="edita(turma, id)"><i class="glyphicon glyphicon-pencil"></i></button>
+                        <button type="button" class="btn btn-primary" ui-sref="turma({id:id})"><i class="glyphicon glyphicon-pencil"></i></button>
                         <button type="button" class="btn btn-danger" ng-click="excluir(id)"><i class="glyphicon glyphicon-trash"></i></button>
                     </td>
                 </tr>
